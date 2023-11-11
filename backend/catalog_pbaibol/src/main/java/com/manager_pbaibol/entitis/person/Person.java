@@ -25,14 +25,14 @@ public class Person  extends PersonBase{
 
     //first_time_appears_here_the_Bible
     private String first_appears;
-    @OneToMany
+    @OneToMany(mappedBy = "person")
     private List<Relatives> relatives;
 
     //city to abitate
     @ManyToMany
     private List <City> cityList;
 
-    private Person(){};
+    public Person(){};
 
 
     public Person(String name, String descriptib_name, String surname,

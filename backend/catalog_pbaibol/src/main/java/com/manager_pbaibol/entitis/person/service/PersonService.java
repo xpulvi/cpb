@@ -18,13 +18,14 @@ public class PersonService {
         return personSave;
     }
 
+    //public cekParental
+
     public List<Person> personList(){
         List<Person> customerList = iPersonRepository.findAll();
         return customerList;
     }
 
     public Person getSinglePerson(Long id){
-        //  Customer singleCustomer = iCustomerRepository.getReferenceById(id);
         if (iPersonRepository.existsById(id)){
             Person singlePerson = iPersonRepository.getReferenceById(id);
             return singlePerson;
@@ -35,13 +36,14 @@ public class PersonService {
     }
 
     public String delatePerson(Long id){
-        HttpServletResponse response = null;
+        //HttpServletResponse response = null;
         if (iPersonRepository.existsById(id)) {
-            iPersonRepository.deleteById(id);
-            response.setStatus(HttpServletResponse.SC_OK);
+             iPersonRepository.deleteById(id);
+           // response.setStatus(HttpServletResponse.SC_OK);
             return id + ": delate" ;
         }else {
-            response.setStatus(HttpServletResponse.SC_CONFLICT);
+            System.out.println("va che non ce sto id " + id);
+            //response.setStatus(HttpServletResponse.SC_CONFLICT);
             return ""; // Restituisci una stringa vuota in caso di conflitto
         }
     }
