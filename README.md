@@ -42,7 +42,29 @@ exempol: get adamo.
 adam to id 1
 our path will be: http://localhost:8080/person/singlr_person/1
 
-### delete singol pers
+### delate sigle person. save id (put)
+
+path: http://localhost:8080/person/upload/{id}
+
+exempol: (delate adamo id = 1)
+path: http://localhost:8080/person/upload/1
+
+body jeson:
+the body to be inserted is the same as that of the creation of the person.
+    
+{
+    "name":"wario",
+    "descriptib_name":"old man",
+    "surname":"w",
+    "nikename":"rossi",
+    "age_at_death":"2000",
+    "first_time_appears_here_the_Bible":"genesi 11:1-5"
+
+}
+
+### delete singol pers on data base and yowr id
+(method not recommended. the id creation strategy is self incremental.
+use of use the above method (put) is recommended.)
 
 path: http://localhost:8080/person/delite_single_person/1
 
