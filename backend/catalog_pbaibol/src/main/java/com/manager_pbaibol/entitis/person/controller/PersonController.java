@@ -21,6 +21,27 @@ public class PersonController {
         return person;
     }
 
+    @PatchMapping("/update/{id}")
+    protected Person patchPerson(@PathVariable Long id, @RequestBody Person person){
+
+        return personService.patchPerson(id, person);
+    }
+
+    /**
+     * used tis metodo for deleting person.
+     * new person. mannite the Old id
+     * but delete the person to whom that id was associated with the new person.
+     * @param id
+     * @param person
+     * @return new person.
+     */
+    @PutMapping("/put/{id}")
+    protected Person putPerson(@PathVariable Long id, @RequestBody Person person){
+        personService.putSinglePerson(id, person);
+        return person;
+    }
+
+
     @GetMapping("/list")
     protected List<Person> personList(){return personService.personList(); }
 

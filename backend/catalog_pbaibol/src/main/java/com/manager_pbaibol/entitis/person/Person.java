@@ -12,7 +12,6 @@ import java.util.List;
 public class Person  extends PersonBase{
 
 
-
     private String name;
 
     private String descriptib_name;
