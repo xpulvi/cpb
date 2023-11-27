@@ -1,5 +1,14 @@
 # cpb
-catalogue people bible 
+catalogue people bible
+
+### description of the Project:
+serves to help the and people who are beginning to read the Bible.
+to take notes on characters and their events, and events described in the Bible.
+
+And like a more structured notepad.
+
+this project and open surce
+
 
 ## api
 
