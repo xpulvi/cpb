@@ -1,14 +1,12 @@
-package com.manager_pbaibol.entitis.city.service;
+package com.manager_pbaibol.entitis.city;
 
 import com.manager_pbaibol.entitis.city.City;
-import com.manager_pbaibol.entitis.city.repository.ICityRepository;
-import com.manager_pbaibol.entitis.person.Person;
+import com.manager_pbaibol.entitis.city.ICityRepository;
 import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class CityService {

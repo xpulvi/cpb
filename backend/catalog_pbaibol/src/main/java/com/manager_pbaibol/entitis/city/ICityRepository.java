@@ -1,4 +1,4 @@
-package com.manager_pbaibol.entitis.city.repository;
+package com.manager_pbaibol.entitis.city;
 
 import com.manager_pbaibol.entitis.city.City;
 import org.springframework.data.jpa.repository.JpaRepository;

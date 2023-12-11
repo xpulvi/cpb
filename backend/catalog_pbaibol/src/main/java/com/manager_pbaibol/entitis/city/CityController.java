@@ -1,7 +1,5 @@
-package com.manager_pbaibol.entitis.city.controller;
+package com.manager_pbaibol.entitis.city;
 
-import com.manager_pbaibol.entitis.city.City;
-import com.manager_pbaibol.entitis.city.service.CityService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
