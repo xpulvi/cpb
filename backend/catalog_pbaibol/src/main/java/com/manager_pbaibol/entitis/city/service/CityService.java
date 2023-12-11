@@ -2,21 +2,67 @@ package com.manager_pbaibol.entitis.city.service;
 
 import com.manager_pbaibol.entitis.city.City;
 import com.manager_pbaibol.entitis.city.repository.ICityRepository;
+import com.manager_pbaibol.entitis.person.Person;
 import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
+
 @Service
 public class CityService {
 
     @Autowired
     private ICityRepository iCityRepository;
-
+    private City city;
     public City createCity(City city){
         City citySave = iCityRepository.save(city);
         return citySave;
     }
+
+    public City patchCity(String name, City city){
+
+        City existingCity = iCityRepository.findByName(name);
+        if (city.getName() != null){
+            existingCity.setName(city.getName());
+        }
+
+        if (city.getCreate_date() != 0){
+            existingCity.setCreate_date(city.getCreate_date());
+        }
+
+        if (city.getDestroi_date() != 0){
+            existingCity.setDestroi_date(city.getDestroi_date());
+        }
+
+        if (city.getFondatore_city() != null){
+            existingCity.setFondatore_city(city.getFondatore_city());
+        }
+
+        if (city.getNait() != null){
+            existingCity.setNait(city.getNait());
+        }
+
+        if (city.getPawns_of_nait() != null){
+            existingCity.setPawns_of_nait(city.getPawns_of_nait());
+        }
+
+        if (city.getName_now() != null){
+            existingCity.setName_now(city.getName_now());
+        }
+
+        return iCityRepository.save(existingCity);
+
+    }
+
+    public City putCity(Long id, City city){
+        city.setId(id);
+        City newCity = iCityRepository.save(city);
+        return newCity;
+
+    }
+
 
     public List<City> cityList(){
         List<City> nameCityList = iCityRepository.findAll();

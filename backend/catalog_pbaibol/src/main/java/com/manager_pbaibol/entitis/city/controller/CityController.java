@@ -16,6 +16,15 @@ public class CityController {
         cityService.createCity(city);
         return city;
     }
+    @PatchMapping("/update/{name}")
+    protected City patchCity (@PathVariable String name, @RequestBody City city){
+        return cityService.patchCity(name,city);
+    }
+
+    @PutMapping("/delite/{id}")
+    protected City putCity (@PathVariable Long id, @RequestBody City city){
+        return cityService.putCity(id,city);
+    }
 
     @GetMapping("/list")
     protected List<City> cityList(){return cityService.cityList(); }

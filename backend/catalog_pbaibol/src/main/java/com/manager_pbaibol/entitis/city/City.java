@@ -7,7 +7,7 @@ import org.springframework.lang.NonNull;
 import java.util.List;
 
 @Entity
-@Table
+@Table(name = "city")
 public class City {
 
     @Id
