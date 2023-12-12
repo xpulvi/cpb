@@ -28,7 +28,7 @@ body json:
 | "name": | "x", |
 | "descriptive_name": | "x", |
 | "surname": | "x", |
-| "nikename": | "x", |
+| "nickname": | "x", |
 | "age_at_death": | "x", |
 | "first_time_appears_here_the_Bible”: | “x” |
 
