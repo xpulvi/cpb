@@ -1,7 +1,9 @@
 # cpb
 catalogue people bible
 
-### description of the Project:
+this project is open surce
+
+### Description
 It serves to help people who are beginning to read the Bible,
 to take notes on characters and their events, and events described in the Bible.
 
@@ -42,7 +44,7 @@ body json:
     }
 
 ### fix person (patch)
-Incorrect inclusion of a characteristic of a person?
+Incorrect characteristic of a person?
 no problem edit it.
 
 path: http://localhost:8080/person/update/{id}
