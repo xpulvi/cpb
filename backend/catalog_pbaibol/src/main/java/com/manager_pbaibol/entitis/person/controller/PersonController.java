@@ -15,7 +15,7 @@ public class PersonController {
     @Autowired
     private PersonService personService;
 
-    @PostMapping
+    @PostMapping("/insert")
     protected Person personCreate (@RequestBody Person person){
         personService.createPerson(person);
         return person;
@@ -45,12 +45,12 @@ public class PersonController {
     @GetMapping("/list")
     protected List<Person> personList(){return personService.personList(); }
 
-    @GetMapping("/single_person/{id}")
+    @GetMapping("/view/{id}")
     protected Person getSinglrPerson(@PathVariable Long id){
         return personService.getSinglePerson(id);
     }
 
-    @DeleteMapping("/delite_single_person/{id}")
+    @DeleteMapping("/delite/{id}")
     protected String delatePerson (@PathVariable Long id, HttpServletResponse response){
 
 
