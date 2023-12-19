@@ -3,10 +3,7 @@ package com.manager_pbaibol.entitis.relatives;
 
 import com.manager_pbaibol.entitis.person.Person;
 import com.manager_pbaibol.entitis.person.repository.IPersonRepository;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.ManyToOne;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.Optional;
@@ -22,18 +19,25 @@ public class Relatives {
     //fare una join
     //private Optional<>
     @ManyToOne
+    @JoinColumn(name = "idPerson")
     private Person person;
-    // id di apogio (e un paliativo non una soluzione)
-    private Long apogioIdPerson;
+
 
     //-----------------------------------------
-
-    private Relatives(){};
+ //IPersonRepository iPersonRepository;
+    public Relatives(){}
 
     public Relatives(Long id, String relationship, Long idRelative){
-        this.apogioIdPerson = id;
+
         this.relationship = relationship;
         this.idRelative = idRelative;
+       /* if(iPersonRepository.existsById(id)) {
+
+            Person existingPerson = iPersonRepository.getReferenceById(id);
+              this.person = existingPerson;
+        }else {
+            System.out.println("L'oggetto Person con ID " + id + " non esiste.");
+        }*/
     }
 
     //TODO erorre progetazione costrutore realtives.

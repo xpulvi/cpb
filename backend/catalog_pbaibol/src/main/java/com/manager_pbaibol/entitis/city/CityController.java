@@ -1,7 +1,5 @@
-package com.manager_pbaibol.entitis.city.controller;
+package com.manager_pbaibol.entitis.city;
 
-import com.manager_pbaibol.entitis.city.City;
-import com.manager_pbaibol.entitis.city.service.CityService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -15,6 +13,15 @@ public class CityController {
     protected City cityCreate (@RequestBody City city){
         cityService.createCity(city);
         return city;
+    }
+    @PatchMapping("/update/{name}")
+    protected City patchCity (@PathVariable String name, @RequestBody City city){
+        return cityService.patchCity(name,city);
+    }
+
+    @PutMapping("/delite/{id}")
+    protected City putCity (@PathVariable Long id, @RequestBody City city){
+        return cityService.putCity(id,city);
     }
 
     @GetMapping("/list")
