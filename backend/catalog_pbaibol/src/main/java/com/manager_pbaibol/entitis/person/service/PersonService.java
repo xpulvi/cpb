@@ -44,6 +44,10 @@ public class PersonService {
             existingPerson.setNikename(person.getNikename());
         }
 
+        if (person.getWork() != null){
+            existingPerson.setWork(person.getWork());
+        }
+
         if (person.getAge_at_death() != 0){
             existingPerson.setAge_at_death(person.getAge_at_death());
         }

@@ -1,9 +1,16 @@
 
 
 spring:
+  spring:
+    config:
+      activate:
+        on-profile: dev
+  server:
+    port: 8080
+
   datasource:
-    url: jdbc:mariadb://127.0.0.1:3306/cpb
-    username: 
+    url: jdbc:mariadb://127.0.0.1:3306/cpbd
+    username:
     password:
     driver-class-name: org.mariadb.jdbc.Driver
   jpa:
@@ -11,3 +18,43 @@ spring:
     show-sql: true
     hibernate:
       ddl-auto: 'create-drop'
+
+---
+spring:
+  config:
+    activate:
+      on-profile: test
+  server:
+    port: 3000
+
+  datasource:
+    url: jdbc:mariadb://127.0.0.1:3306/cpbt
+    username:
+    password:
+    driver-class-name: org.mariadb.jdbc.Driver
+  jpa:
+    database: mysql
+    show-sql: true
+    hibernate:
+      ddl-auto: 'create-drop'
+
+---
+spring:
+  config:
+    activate:
+      on-profile: prodaction
+
+  server:
+    port: 8080
+
+  datasource:
+    url: jdbc:mariadb://127.0.0.1:3306/cpb
+    username:
+    password:
+    driver-class-name: org.mariadb.jdbc.Driver
+
+  jpa:
+    database: mysql
+    show-sql: true
+    hibernate:
+      ddl-auto: 'update'

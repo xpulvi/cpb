@@ -27,7 +27,7 @@ public class CityController {
     @GetMapping("/list")
     protected List<City> cityList(){return cityService.cityList(); }
 
-    @GetMapping("/{id}")
+    @GetMapping("/view/{id}")
     protected City getSinglrCity(@PathVariable Long id){
         return cityService.getSingleCity(id);
     }
