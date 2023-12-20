@@ -1,5 +1,6 @@
 package com.manager_pbaibol.entitis.relatives;
 
+import com.manager_pbaibol.entitis.person.Person;
 import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -16,13 +17,47 @@ public class RelativesService {
        return relativesSave;
     }
 
+    public Relatives patchRelatives(Long id, Relatives relatives){
+        Relatives existingRelatives = iRelativesRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Relatives not found with id: " + id));
+
+        if (relatives.getIdRelative() != null){
+            existingRelatives.setIdRelative(relatives.getIdRelative());
+        }
+
+        if (relatives.getRelativeName() != null){
+            existingRelatives.setRelativeName(relatives.getRelativeName());
+        }
+
+        if (relatives.getRelationship() != null){
+            existingRelatives.setRelationship(relatives.getRelationship());
+        }
+
+        if (relatives.getPersonId() != 0){
+            existingRelatives.setPersonId(relatives.getPersonId());
+        }
+
+        if (relatives.getNamePerson() != null){
+            existingRelatives.setNamePerson(relatives.getNamePerson());
+        }
+
+        return iRelativesRepository.save(existingRelatives);
+
+    }
+
+    public Relatives putRelatives(Long id, Relatives relatives){
+        relatives.setIdRelative(id);
+        Relatives newRelatives = iRelativesRepository.save(relatives);
+        return  newRelatives;
+    }
+
     public List<Relatives> relativesList(){
         List<Relatives> relativesList = iRelativesRepository.findAll();
         return relativesList;
     }
 
+    //TODO agiungere piu modi di ricerca.
     public Relatives getSingleRelatives(Long id){
-        //  Customer singleCustomer = iCustomerRepository.getReferenceById(id);
         if (iRelativesRepository.existsById(id)){
             Relatives singleRelatives = iRelativesRepository.getReferenceById(id);
             return singleRelatives;

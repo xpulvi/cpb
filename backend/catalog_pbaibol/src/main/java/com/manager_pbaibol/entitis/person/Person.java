@@ -24,6 +24,9 @@ public class Person  extends PersonBase{
 
     //first_time_appears_here_the_Bible
     private String first_appears;
+
+    private String work;
+
     @OneToMany(mappedBy = "person")
     private List<Relatives> relatives;
 
@@ -35,16 +38,16 @@ public class Person  extends PersonBase{
 
 
     public Person(String name, String descriptib_name, String surname,
-                  String nikename, int age_at_death, String first_appears) {
+                  String nikename, String work, int age_at_death, String first_appears) {
 
         this.name = name;
         this.descriptib_name = descriptib_name;
         this.surname = surname;
         this.nikename = nikename;
+        this.work = work;
         this.age_at_death = age_at_death;
         this.first_appears = first_appears;
     }
-
 
     public String getName() {
         return name;
@@ -92,5 +95,29 @@ public class Person  extends PersonBase{
 
     public void setFirst_appears(String first_appears) {
         this.first_appears = first_appears;
+    }
+
+    public String getWork() {
+        return work;
+    }
+
+    public void setWork(String work) {
+        this.work = work;
+    }
+
+    public List<Relatives> getRelatives() {
+        return relatives;
+    }
+
+    public void setRelatives(List<Relatives> relatives) {
+        this.relatives = relatives;
+    }
+
+    public List<City> getCityList() {
+        return cityList;
+    }
+
+    public void setCityList(List<City> cityList) {
+        this.cityList = cityList;
     }
 }
