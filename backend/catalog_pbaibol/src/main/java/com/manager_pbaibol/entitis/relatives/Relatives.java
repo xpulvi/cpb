@@ -15,7 +15,7 @@ public class Relatives {
     private String relationship;
 
     //TODO rimuovere qusta colona inutile. JoinColumn mi piaceva averlo (funzionante) pero.
-    @ManyToOne
+    @ManyToOne(optional = false)
     @JoinColumn(name = "idPerson")
     private Person person;
 

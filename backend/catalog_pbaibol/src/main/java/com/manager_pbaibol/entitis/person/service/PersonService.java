@@ -1,16 +1,9 @@
 package com.manager_pbaibol.entitis.person.service;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.manager_pbaibol.entitis.person.Person;
 import com.manager_pbaibol.entitis.person.repository.IPersonRepository;
-import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.PatchMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
 
 import java.util.List;
 
