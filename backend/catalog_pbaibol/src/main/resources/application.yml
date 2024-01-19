@@ -9,9 +9,9 @@ spring:
     port: 8080
 
   datasource:
-    url: jdbc:mariadb://127.0.0.1:3306/cpbd
+    url: jdbc:mariadb://127.0.0.1:3306/test
     username:
-    password:
+    password: 
     driver-class-name: org.mariadb.jdbc.Driver
   jpa:
     database: mysql

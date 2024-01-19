@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class PersonService {
@@ -74,14 +75,21 @@ public class PersonService {
         return customerList;
     }
 
-    public Person getSinglePerson(Long id){
-        if (iPersonRepository.existsById(id)){
-            Person singlePerson = iPersonRepository.getReferenceById(id);
-            return singlePerson;
-        }else {
-            System.out.println("non esiste");
+    public Optional<Person> getSinglePerson(Long id)throws Exception{
+
+        try {
+            if (iPersonRepository.existsById(id)){
+                Optional<Person> singlePerson = iPersonRepository.findById(id);
+                return singlePerson;
+            }else {
+                System.out.println("non esiste");
+            }
+
+        }catch (Exception e){
+            e.printStackTrace();
         }
         return null;
+
     }
 
     public String delatePerson(Long id){

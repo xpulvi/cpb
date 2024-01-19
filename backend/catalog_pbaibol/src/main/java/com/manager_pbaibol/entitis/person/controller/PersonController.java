@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/person")
@@ -46,7 +47,7 @@ public class PersonController {
     protected List<Person> personList(){return personService.personList(); }
 
     @GetMapping("/view/{id}")
-    protected Person getSinglrPerson(@PathVariable Long id){
+    protected Optional<Person> getSinglrPerson(@PathVariable Long id) throws Exception {
         return personService.getSinglePerson(id);
     }
 
