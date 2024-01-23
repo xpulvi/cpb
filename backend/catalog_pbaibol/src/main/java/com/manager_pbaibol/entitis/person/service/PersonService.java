@@ -38,8 +38,16 @@ public class PersonService {
             existingPerson.setNikename(person.getNikename());
         }
 
+        if(person.getWho_get_nickname() != null){
+            existingPerson.setWho_get_nickname(person.getWho_get_nickname());
+        }
+
         if (person.getWork() != null){
             existingPerson.setWork(person.getWork());
+        }
+
+        if (person.getAnd_wealthy() != null){
+            existingPerson.setAnd_wealthy(person.getAnd_wealthy());
         }
 
         if (person.getAge_at_death() != 0){
