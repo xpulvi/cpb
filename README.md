@@ -1,10 +1,10 @@
 # cpb
-catalogue people bible
+catalogue people book
 
 this project is open surce
 
 ### Description
-It serves to help people who are beginning to read the Bible,
+It serves to help people who are beginning to read the Bible or book,
 to take notes on characters and their events, and events described in the Bible.
 
 And like a more structured notepad.
