@@ -7,7 +7,7 @@ import org.springframework.lang.NonNull;
 import java.util.List;
 
 @Entity
-@Table
+@Table(name = "city")
 public class City {
 
     @Id
@@ -29,8 +29,8 @@ public class City {
 
     private String name_now;
 
-    @ManyToMany
-    private List <Person> person;
+   /* @ManyToMany
+    private List <Person> person; */
 
     private City(){};
     public City(@NonNull String name, int create_date, int destroi_date, String fondatore_city, String nait,

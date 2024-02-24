@@ -1,18 +1,12 @@
 package com.manager_pbaibol.entitis.person.service;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.manager_pbaibol.entitis.person.Person;
 import com.manager_pbaibol.entitis.person.repository.IPersonRepository;
-import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.PatchMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class PersonService {
@@ -42,6 +36,18 @@ public class PersonService {
 
         if (person.getNikename() != null){
             existingPerson.setNikename(person.getNikename());
+        }
+
+        if(person.getWho_get_nickname() != null){
+            existingPerson.setWho_get_nickname(person.getWho_get_nickname());
+        }
+
+        if (person.getWork() != null){
+            existingPerson.setWork(person.getWork());
+        }
+
+        if (person.getAnd_wealthy() != null){
+            existingPerson.setAnd_wealthy(person.getAnd_wealthy());
         }
 
         if (person.getAge_at_death() != 0){
@@ -77,14 +83,21 @@ public class PersonService {
         return customerList;
     }
 
-    public Person getSinglePerson(Long id){
-        if (iPersonRepository.existsById(id)){
-            Person singlePerson = iPersonRepository.getReferenceById(id);
-            return singlePerson;
-        }else {
-            System.out.println("non esiste");
+    public Optional<Person> getSinglePerson(Long id)throws Exception{
+
+        try {
+            if (iPersonRepository.existsById(id)){
+                Optional<Person> singlePerson = iPersonRepository.findById(id);
+                return singlePerson;
+            }else {
+                System.out.println("non esiste");
+            }
+
+        }catch (Exception e){
+            e.printStackTrace();
         }
         return null;
+
     }
 
     public String delatePerson(Long id){

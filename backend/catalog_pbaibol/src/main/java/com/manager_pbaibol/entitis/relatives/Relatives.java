@@ -1,12 +1,7 @@
 package com.manager_pbaibol.entitis.relatives;
 
-
 import com.manager_pbaibol.entitis.person.Person;
-import com.manager_pbaibol.entitis.person.repository.IPersonRepository;
 import jakarta.persistence.*;
-import org.springframework.beans.factory.annotation.Autowired;
-
-import java.util.Optional;
 
 @Entity
 @Table(name = "relatives")
@@ -14,38 +9,29 @@ public class Relatives {
 
     @Id
     private Long idRelative;
+
+    private String relativeName;
     //name sobgiet
     private String relationship;
-    //fare una join
-    //private Optional<>
-    @ManyToOne
+
+    //TODO rimuovere qusta colona inutile. JoinColumn mi piaceva averlo (funzionante) pero.
+    @ManyToOne(optional = false)
     @JoinColumn(name = "idPerson")
     private Person person;
 
+    private Long personId;
+    private String namePerson;
 
     //-----------------------------------------
- //IPersonRepository iPersonRepository;
     public Relatives(){}
+    public Relatives(Long personId, String namePerson, String relationship,Long idRelative, String relativeName){
 
-    public Relatives(Long id, String relationship, Long idRelative){
-
+        this.personId = personId;
+        this.namePerson = namePerson;
         this.relationship = relationship;
         this.idRelative = idRelative;
-       /* if(iPersonRepository.existsById(id)) {
+        this.relativeName = relativeName;
 
-            Person existingPerson = iPersonRepository.getReferenceById(id);
-              this.person = existingPerson;
-        }else {
-            System.out.println("L'oggetto Person con ID " + id + " non esiste.");
-        }*/
-    }
-
-    //TODO erorre progetazione costrutore realtives.
-    public Relatives(Person person, String relationship, Long idRelative) {
-
-        this.person = person;
-        this.idRelative = idRelative;
-        this.relationship = relationship;
     }
 
     public Long getIdRelative() {
@@ -54,6 +40,14 @@ public class Relatives {
 
     public void setIdRelative(Long idRelative) {
         this.idRelative = idRelative;
+    }
+
+    public String getRelativeName() {
+        return relativeName;
+    }
+
+    public void setRelativeName(String relativeName) {
+        this.relativeName = relativeName;
     }
 
     public String getRelationship() {
@@ -70,5 +64,21 @@ public class Relatives {
 
     public void setPerson(Person person) {
         this.person = person;
+    }
+
+    public Long getPersonId() {
+        return personId;
+    }
+
+    public void setPersonId(Long personId) {
+        this.personId = personId;
+    }
+
+    public String getNamePerson() {
+        return namePerson;
+    }
+
+    public void setNamePerson(String namePerson) {
+        this.namePerson = namePerson;
     }
 }
