@@ -20,12 +20,16 @@ public class Person  extends PersonBase{
 
     private String nikename;
 
+    private String who_get_nickname;
+
     private int age_at_death;
 
     //first_time_appears_here_the_Bible
     private String first_appears;
 
     private String work;
+
+    private String and_wealthy;
 
     @OneToMany(mappedBy = "person")
     private List<Relatives> relatives;
@@ -36,17 +40,18 @@ public class Person  extends PersonBase{
 
     public Person(){};
 
-
-    public Person(String name, String descriptib_name, String surname,
-                  String nikename, String work, int age_at_death, String first_appears) {
-
+    public Person(String name, String descriptib_name, String surname, String nikename,
+                  String who_get_nickname, int age_at_death, String first_appears,
+                  String work, String and_wealthy) {
         this.name = name;
         this.descriptib_name = descriptib_name;
         this.surname = surname;
         this.nikename = nikename;
-        this.work = work;
+        this.who_get_nickname = who_get_nickname;
         this.age_at_death = age_at_death;
         this.first_appears = first_appears;
+        this.work = work;
+        this.and_wealthy = and_wealthy;
     }
 
     public String getName() {
@@ -81,6 +86,14 @@ public class Person  extends PersonBase{
         this.nikename = nikename;
     }
 
+    public String getWho_get_nickname() {
+        return who_get_nickname;
+    }
+
+    public void setWho_get_nickname(String who_get_nickname) {
+        this.who_get_nickname = who_get_nickname;
+    }
+
     public int getAge_at_death() {
         return age_at_death;
     }
@@ -105,19 +118,12 @@ public class Person  extends PersonBase{
         this.work = work;
     }
 
-    public List<Relatives> getRelatives() {
-        return relatives;
+    public String getAnd_wealthy() {
+        return and_wealthy;
     }
 
-    public void setRelatives(List<Relatives> relatives) {
-        this.relatives = relatives;
+    public void setAnd_wealthy(String andWealthy) {
+        this.and_wealthy = andWealthy;
     }
 
-    public List<City> getCityList() {
-        return cityList;
-    }
-
-    public void setCityList(List<City> cityList) {
-        this.cityList = cityList;
-    }
 }
