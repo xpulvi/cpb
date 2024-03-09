@@ -24,3 +24,9 @@ services:
       MYSQL_PASSWORD: mypassword
     ports:
       - "3306:3306"
+    networks:
+      - cpbnetwork
+
+networks:
+  cpbnetwork:
+    driver: bridge
