@@ -1,4 +1,4 @@
-# cpb
+# Catalogue People Book (c.p.b)
 catalogue people book
 
 this project is open surce
