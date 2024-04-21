@@ -2,6 +2,7 @@
 <section name="Workbench">
 	<section name="MavenProjectImportWizardPage">
 		<list key="rootDirectory">
+			<item value="D:\Develop\workSpace\opensurce\"/>
 			<item value="D:\Develop\workSpace\opensurce\catalog_pbaibol"/>
 		</list>
 		<list key="projectNameTemplate">

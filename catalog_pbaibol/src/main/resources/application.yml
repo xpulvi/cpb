@@ -10,7 +10,7 @@ spring:
 
   datasource:
     url: jdbc:mariadb://127.0.0.1:3306/testdb?allowPublicKeyRetrieval=false&useSSL=false
-    username: 
+    username:
     password:
     driver-class-name: org.mariadb.jdbc.Driver
   jpa:
@@ -18,6 +18,8 @@ spring:
     show-sql: true
     hibernate:
       ddl-auto: 'create-drop'
+
+fileRepositoryFolder: D:\\Desktop\\file repository\\
 
 ---
 spring:

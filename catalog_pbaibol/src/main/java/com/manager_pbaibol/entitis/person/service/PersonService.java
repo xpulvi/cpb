@@ -57,10 +57,10 @@ public class PersonService {
         if (person.getFirst_appears() != null){
             existingPerson.setFirst_appears(person.getFirst_appears());
         }
-/*
+
         if (person.getImg() != null){
             existingPerson.setImg(person.getImg());
-        } */
+        }
 
         return iPersonRepository.save(existingPerson);
 

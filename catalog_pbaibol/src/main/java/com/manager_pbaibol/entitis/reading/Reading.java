@@ -12,7 +12,7 @@ public class Reading {
     private Long id;
 
     private String cosaOLetto;
-    @GeneratedValue(strategy = GenerationType.AUTO)
+
     private LocalDate today = LocalDate.now(); // get date now dey.
      //System.out.println("today toString " + today.toString());
     private String cosaLeggere;

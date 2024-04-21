@@ -31,6 +31,8 @@ public class Person  extends PersonBase{
     private String work;
 
     private String and_wealthy;
+
+    private String img;
   //  private String img;
 
     @OneToMany(mappedBy = "person")
@@ -44,7 +46,7 @@ public class Person  extends PersonBase{
 
     public Person(String name, String descriptib_name, String surname, String nikename,
                   String who_get_nickname, int age_at_death, String first_appears,
-                  String work, String and_wealthy /*, String img */) {
+                  String work, String and_wealthy , String img ) {
         this.name = name;
         this.descriptib_name = descriptib_name;
         this.surname = surname;
@@ -54,7 +56,7 @@ public class Person  extends PersonBase{
         this.first_appears = first_appears;
         this.work = work;
         this.and_wealthy = and_wealthy;
-       // this.img = img;
+        this.img = img;
     }
 
     public String getName() {
@@ -128,7 +130,7 @@ public class Person  extends PersonBase{
     public void setAnd_wealthy(String andWealthy) {
         this.and_wealthy = andWealthy;
     }
-/*
+
     public String getImg() {
         return img;
     }
@@ -137,5 +139,5 @@ public class Person  extends PersonBase{
         this.img = img;
     }
 
- */
+
 }
