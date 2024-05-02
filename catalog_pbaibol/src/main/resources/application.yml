@@ -10,8 +10,8 @@ spring:
 
   datasource:
     url: jdbc:mariadb://127.0.0.1:3306/testdb?allowPublicKeyRetrieval=false&useSSL=false
-    username:
-    password:
+    username: root
+    password: 
     driver-class-name: org.mariadb.jdbc.Driver
   jpa:
     database: mysql
